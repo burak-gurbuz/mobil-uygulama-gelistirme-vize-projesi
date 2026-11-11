@@ -1,0 +1,29 @@
+name: mobile_app
+description: "Kişi Yönetim Sistemi - Mobil Programlama Vize Projesi"
+publish_to: "none" # Bu paketin pub.dev'e yayınlanmasını engeller.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # HTTP İstekleri: Backend API (Django) ile iletişim kurmak (GET, POST, PUT, DELETE) için kullanılır.
+  http: ^1.2.0
+
+  # URL Başlatıcı: E-posta göndermek (mailto:) ve telefonla aramak (tel:) için kullanılır.
+  url_launcher: ^6.2.5
+
+  # İkon kütüphanesi
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true

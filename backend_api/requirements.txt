@@ -1,0 +1,7 @@
+# requirements.txt - Projede kullanılan Python paketlerinin listesidir.
+# Bu dosyadaki paketler "pip install -r requirements.txt" komutuyla toplu kurulur.
+# Her satır bir paket adı ve versiyon numarası içerir.
+
+django>=4.2,<5.0          # Django web framework - web uygulaması geliştirmek için ana çatı.
+djangorestframework>=3.14  # Django REST Framework - RESTful API oluşturmak için ek kütüphane.
+django-cors-headers>=4.0   # CORS başlıkları - Flutter gibi farklı kaynaklardan API erişimi için.

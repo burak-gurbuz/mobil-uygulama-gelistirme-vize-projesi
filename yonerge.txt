@@ -1,0 +1,123 @@
+MOBİL PROGRAMLAMA DERSİ
+Vize Sınavı Proje Çalışması: Kişi Yönetim Sistemi (Client-Server
+REST Mimarisi)
+  
+ 
+  
+  
+Dönem: 2026-2027 Güz
+Ödev Türü: Bireysel 
+Geliştirme   
+Değerlendirme: Vize Notu
+Yöntem: Canlı Kod
+Savunması
+1 Projenin Amacı ve Mimari Altyapı
+Bu projenin amacı, modern bir mobil kullanıcı arayüzü ile bağımsız bir backend web servisinin HTTP/REST protokolü üzerinden
+entegre çalışmasını sağlamaktır. Mobil istemci, sunucudan aldığı JSON verilerini yerel modellerine bağlayacak, asenkron ağ isteklerini
+yönetecek ve kullanıcı etkileşimleriyle CRUD operasyonlarını icra edecektir.
+Mobil İstemci (Frontend)
+Flutter (Dart), Android (Kotlin / Jetpack
+Compose), iOS (SwiftUI) veya React Native.
+Sunucu Katmanı (Backend)
+ASP.NET Core Web API (C#) veya Django
+REST Framework (DRF / Python).
+İletişim & Veri Formatı
+JSON gövdeli RESTful HTTP istekleri (GET,
+POST, PUT/PATCH, DELETE).
+2 Ekran ve Fonksiyonel Tasarım Gereksinimleri
+1. Kişi Listesi (Ana Sayfa) GET İstekleri
+Dinamik Liste: API'deki /api/persons ucundan çekilen
+veriler kaydırılabilir liste (ListView) içinde listelenir.
+Satır/Kart Elemanları: Her satırda solda dairesel profil
+fotoğrafı (ağ resmi), yanında kalın yazı tipiyle Ad-Soyad ve
+altında Departman bilgisi gösterilir.
+Floating Action Button (FAB): Ekranın sağ alt köşesinde
+sabit + simgeli buton yer almalıdır. Tıklandığında yeni kişi
+kayıt ekranını açar.
+Gezinim (Navigation): Listeden bir satıra tıklandığında
+seçilen kişinin benzersiz ID'si ile Detay Sayfası açılmalıdır.
+2. Kişi Detay Sayfası ID Bazlı Veri & Aksiyon
+Görsel & Bilgi Hiyerarşisi: Üstte büyük profil fotoğrafı,
+merkezde Ad-Soyad ve Departman unvanı; alt panelde ise
+kartlar/satırlar halinde Doğum Yeri, Doğum Tarihi, E-posta
+ve Telefon yer alır.
+İletişim Aksiyonları: E-posta ve telefon satırları tıklanabilir
+olmalı; sistemin arama ve posta gönderme niyetlerini
+(intent/url_launcher) tetiklemelidir.
+Aksiyon Butonları (En Altta Sabit):
+Düzenle (Edit): Bilgileri güncelleme ekranına taşır.
+Sil (Delete): Kullanıcıdan onay diyaloğu alarak API'ye
+DELETE isteği yollar ve listeye geri döner.
+3 Ekran Yerleşim Şeması ve Gezinim Akışı (Wireframe)
+ŞEKİL 1: LİSTE VE DETAY EKRANI BİLEŞEN DÜZENİ AĞ PROTOKOLÜ: REST / JSON
+Rehber / Kişi Listesi
+Ahmet Yılmaz
+Yazılım Geliştirme Departmanı
+Ayşe Kaya
+İnsan Kaynakları
+Mehmet Demir
+Bilgi Teknolojileri +
+Satıra Tıkla
+< Kişi Detay Bilgileri
+Ahmet Yılmaz
+Yazılım Geliştirme
+• D.Yeri / Tarih: Adana | 12.04.1994
+• E-Posta: ahmet.yilmaz@sirket.com
+• Telefon: +90 (555) 012 34 56
+✎ DÜZENLE 🗑 KİŞİYİ SİL
+REST API (ASP.NET / DJANGO)
+GET /api/persons
+GET /api/persons/{id}
+POST /api/persons
+PUT /api/persons/{id}
+DELETE /api/persons/{id}
+Mobil Programlama Dersi — Vize Proje Yönergesi Sayfa 1 / 2
+---PAGE---
+4 REST Veri Şeması ve Uç Noktalar
+Metot Uç Nokta İşlem / Görev Açıklaması
+GET /api/persons Tüm kişileri dizi (array)formatında listeler.
+GET /api/persons/{id} Belirtilen ID'ye sahip kişinintüm detaylarını döner.
+POST /api/persons Yeni kişi kaydı oluşturur(Form body JSON).
+PUT /api/persons/{id} Kişinin iletişim ve unvanbilgilerini günceller.
+DELETE /api/persons/{id} İlgili kaydı veritabanındankalıcı olarak siler.
+       // Örnek Kişi JSON Şeması (Payload) 
+{ "id": 104, "fullName": "Ahmet Yılmaz", 
+"department": "Yazılım Geliştirme", 
+"photoUrl": "https://cdn.site/p/104.png", 
+"birthPlace": "Adana", "birthDate": "1994-
+04-12", "email": 
+"ahmet.yilmaz@sirket.com", "phone": 
+"+905550123456" }
+      
+⚠  KRİTİK DEĞERLENDİRME KURALI: SUNUM VE KOD SAVUNMASI
+PROJE TESLİM ETMEK VEYA ÇALIŞIR UYGULAMA SUNMAK PUAN ALACAĞINIZ ANLAMINA GELMEZ! Vize notunuz, sunum
+esnasında sorulan sorulara vereceğiniz yanıtların doğruluğu ve kod hakimiyetiniz üzerinden takdir edilecektir.
+Yapay Zeka (AI) Kullanımı Serbesttir: ChatGPT, Claude, GitHub Copilot vb. yapay zeka araçlarından fikir, mimari kurgu veya kod
+desteği alabilirsiniz.
+Satır Satır Kod Hakimiyeti Zorunludur: Sunum esnasında projedeki herhangi bir kod satırı rastgele seçilerek ne işe yaradığı,
+neden o kütüphanenin kullanıldığı ve asenkron veri akışının mantığı sorulacaktır. Açıklanamayan her kod satırı doğrudan not
+kaybına yol açacaktır.
+Canlı Kod Müdahalesi Testi: Öğrenciye mülakat sırasında kod üzerinde anlık küçük değişiklikler (Örn: "Kart üzerinde departman
+yerine telefon numarasını gösteriniz", "Silme onayı uyarısının buton rengini değiştiriniz") yaptırılacaktır. Kendi projesine müdahale
+edemeyen öğrenci kodun sahibi sayılmayacaktır.
+5 Teslim Esasları, Sunum Takvimi ve Mülakat Prosedürü
+📅  Vize Sunum ve Kod Savunması: 4 Kasım 2026 Çarşamba Başlangıç Saati: 13.00 Katılım Zorunludur
+Canlı Sunum ve Mülakat Süreci:
+Tüm öğrenciler 4.11.2026 saat 13.00'da projelerini çalışır vaziyette (emülatör veya
+fiziksel cihazda mobil uygulama ve backend API aktif halde) hazır bulundurmalıdır.
+Değerlendirme birebir mülakat yöntemiyle yapılacak; öğrencinin sunduğu çözüme ve
+yöneltilen teknik sorulara verdiği yanıtlara göre notu belirlenecektir.
+Sunuma katılmayan veya projesini canlı ortamda ayağa kaldıramayan öğrenciler vize
+sınavından başarısız sayılacaktır.
+Teslim Edilecek Kaynaklar:
+GitHub/GitLab açık repo bağlantısı
+(/mobile_app ve /backend_api iki
+ayrı kök klasör olmalıdır).
+API servisinin yerelde nasıl kurulacağını
+anlatan adım adım README.md
+dokümanı.
+Mobil uygulamanın derlenmiş test
+paketi (çalıştırılabilir APK veya test
+kılavuzu).
+Mobil Programlama Dersi — Vize Proje Yönergesi Sayfa 2 / 2
+---PAGE---
